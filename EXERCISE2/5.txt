@@ -1,0 +1,3 @@
+For equal dimension one output is 180 degree rotation of other. 
+
+If dimensions are unequal the result will be different.If dimensions are both even or both odd the output matrix with the smaller dimension, when rotated 180 degree, is a portion of the output matrix with the larger dimension.

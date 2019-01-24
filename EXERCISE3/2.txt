@@ -1,0 +1,12 @@
+
+F[u][v]=Fconj[-u][-v] (1) Conjugate symmetry property
+   
+
+   
+Fconj[u][v] = F[-u][-v] from(1) (2)
+   
+     Tconj*Fconj*Tconj (Substitute (2))
+     
+     Tconj*F[-u][-v]*Tconj = f(-x,-y) 
+
+So we get the reversed image at last

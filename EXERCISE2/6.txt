@@ -1,0 +1,9 @@
+Addition:
+Produces a superimposition of two images.
+Substraction:
+Results in the difference B/W two images.
+Multiplication:
+If multiplied by a value >1 produces a brighter image.
+Division:
+If divided by a value >1 produces a less brighter image.
+

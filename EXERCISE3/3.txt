@@ -1,0 +1,5 @@
+
+
+As the value of F(0,0) is high compared to other values in the original transformation image the bright spot is concentrate at the centre and other pixels are observed as dark .
+
+As we transform the zero padded image the value of F(0,0) decreases compared to earlier and therfore more pixels in the centre become visible as the brightest spot has become less brighter

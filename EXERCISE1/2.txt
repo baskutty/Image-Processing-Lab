@@ -1,0 +1,12 @@
+512*512:
+This image has clarity less than the original 1024*1024 but visible.
+256*256:
+This image has clarity less than the 512*512.Some blurriness is shown.
+128*128:
+This image has clarity less than the 256*256.Blurrier than 256*256.
+64*64:
+This image has clarity less than the 128*128.Blurrier than 128*128.
+32*32:
+This image has clarity less than the 64*64.Blurrier than 64*64.
+16*16:
+This image has clarity less than the 32*32.Very blurred image.

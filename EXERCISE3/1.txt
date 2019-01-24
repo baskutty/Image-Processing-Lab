@@ -1,0 +1,12 @@
+1.a.
+Frequency domain is obtained after taking DFT. The white corner represents the higher frequency changes.
+1.b.
+MOD of fourier transform is magnitude spectrum. More intense than fourier transform image. This due to taking mod while in fourier only real part was displayed.
+1.c.
+Angular values of fourier transform ie. tan ^-1 of imaginary part/real part and displayed taking exponent to avoid negative.
+1.d.
+Has more intensity than the magnitude spectrum before.
+1.e.
+An image similar to the orginal image is obtained after taking IDFT of the fourier.
+1.f. 
+Magnitude spectrum is obtained after removing phase spectrum from DFT so we take inverse of magnitude spectrum.

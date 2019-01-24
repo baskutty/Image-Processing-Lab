@@ -1,0 +1,14 @@
+  
+  X(ω)=∫∞−∞x(t)e^(-iωt)dt  (1)
+  x(t)=1/2π*∫∞−∞X(ω)e^(iωt)dω  (2)
+replacing t with -t in (2)
+  x(-t)=1/2π*∫∞−∞X(ω)e^(-iωt)dω (3)
+  ∫∞−∞X(ω)e^(-iωt)dω =Fourier transform of X(ω) (4)
+  X(ω)=Fourier transform of x(t) (5)
+ Therefore from (4) and (5) (3) becomes 
+x(-t)=1/2π* Fourier transform of (Fourier transform of x(t))
+
+Its the same for DFT
+ 
+So if DFT is applied two times in succession we get an reversed image.
+

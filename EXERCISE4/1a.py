@@ -29,7 +29,7 @@ def count_overlap(a,b,bits):
 	return count
 
 img=cv2.imread('q1.jpg',0)
-
+print("IMAGE")
 print(img)
 
 WB=np.zeros(img.shape,dtype=float64)
@@ -44,12 +44,14 @@ for x in range(n):
 			WB[x][y]=1/n
 		else:
 			WB[x][y]=-1/n
-
+print("WALSH BASIS")
 print(WB)
 
 WT=np.dot(np.dot(WB,img),WB)
+print("WALSH TRANSFORM")
 print(WT)
 recons=np.dot(np.dot(WB,WT),WB)*(n*n)
+print("RECONSTRUCTION")
 print(recons)
 cv2.imwrite("1a_basis.jpg",WB*255*255)
 cv2.imwrite("1a.jpg",WT*n*n)

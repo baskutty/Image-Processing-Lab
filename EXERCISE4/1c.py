@@ -8,6 +8,7 @@ from pylab import *
 import math
 
 img=cv2.imread('q1.jpg',0)
+print("IMAGE")
 print(img)
 HAB=np.zeros(img.shape,dtype=float64)
 
@@ -50,12 +51,14 @@ for i in range (N):
 		
 
 HAB=HAB/(N**(1/2))			
-	
+print("HAAR BASIS")	
 print (HAB)
 
 HAT=np.dot(np.dot(HAB,img),np.transpose(HAB))
+print("HAAR TRANSFORM")
 print(HAT)
 recons=np.dot(np.dot(np.transpose(HAB),HAT),HAB)
+print("TRANSFORMATION")
 print(recons)
 cv2.imwrite("1c_basis.jpg",HAB*255)
 cv2.imwrite("1c.jpg",HAT)

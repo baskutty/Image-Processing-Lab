@@ -7,6 +7,7 @@ import cv2
 from pylab import *
 
 img=cv2.imread('q1.jpg',0)
+print("IMAGE")
 print(img)
 HB=np.zeros(img.shape,dtype=int)
 
@@ -20,11 +21,14 @@ while i < n:
             HB[j][k+i]    = HB[j][k]
             HB[j+i][k+i] = -(HB[j][k])
     i += i
+print("HADAMARD BASIS")
 print(HB)
 
 hadamard=np.dot(np.dot(HB,img),HB)
+print("HADAMARD TRANSFORM")
 print(hadamard)
 recons=np.dot(np.dot(HB,hadamard),HB)/(n*n)
+print("RECONSTRUCTION")
 print(recons)
 
 cv2.imwrite("1b_basis.jpg",HB*255)

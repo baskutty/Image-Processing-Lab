@@ -1,0 +1,23 @@
+
+
+WALSH:
+Coefficients near origin are having the maximum energy and as you go away from the origin the energy of the coefficients reduces.But here the energy compaction property is not strong.
+Small energy compaction
+
+HADAMAND:
+Here the energy is concentrated more towards origin compared to the Walsh transformation.
+Energy compaction higher than Walsh
+
+HAAR:
+Energy compaction higher than hadamand.
+
+
+DCT:
+In the case of discrete cosine transformation,the energy is concentrated in a small region in the coefficients space near about the origin.
+Energy compaction is high.Greater than HAAR
+
+KL:
+Energy compaction is highest for Karhunen-Loeve
+
+Best for Compression:
+HAAR transform is the best for compression because haar transform has the lowest file size.

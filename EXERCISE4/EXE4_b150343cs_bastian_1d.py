@@ -6,7 +6,7 @@ import cv2
 
 from pylab import *
 
-img=cv2.imread('q1.jpg',0)
+img=cv2.imread('q1.tif',0)
 print("IMAGE")
 print(img)
 CB=np.zeros(img.shape,dtype=float64)
@@ -30,3 +30,19 @@ print(recons)
 cv2.imwrite("1d_basis.jpg",CB*255)
 cv2.imwrite("1d.jpg",DCT)
 cv2.imwrite("1d_reconstruction.jpg",recons)
+
+
+CB=np.triu(CB,0)
+print("COSINE BASIS CR")
+print (CB)
+
+DCT=np.dot(np.dot(CB,img),np.transpose(CB))
+print("COSINE TRANSFORM CR")
+print(DCT)
+recons=np.dot(np.dot(np.transpose(CB),DCT),CB)
+print("RECONSTRUCTION CR")
+print(recons)
+cv2.imwrite("1d_basis_cr.jpg",CB*255)
+cv2.imwrite("1d_cr.jpg",DCT)
+cv2.imwrite("1d_reconstruction_cr.jpg",recons)
+

@@ -1,13 +1,13 @@
 from PIL import Image
 import numpy as np
-img=Image.open("q2.jpg")
+img=Image.open("q2.tif")
 img=img.convert("L")
 ima=np.array(img)
 im=ima
 for k in range (6):
-	imc = np.zeros(((im.shape[0]/2),(im.shape[1]/2)))
-	for i in range(im.shape[0]/2):
-		for j in range(im.shape[1]/2):
+	imc = np.zeros((int(im.shape[0]/2),int(im.shape[1]/2)))
+	for i in range(int (im.shape[0]/2)):
+		for j in range(int(im.shape[1]/2)):
 			s = int(im[2*i][2*j])
 			s += int(im[2*i+1][2*j])
 			s += int(im[2*i+1][2*j+1])
@@ -24,7 +24,7 @@ for k in range (6):
 	r=1024/imc.shape[0]
 	for i in range (1024):
 		for j in range (1024):
-			im1024[i][j]=imc[i/r][j/r]
+			im1024[i][j]=imc[int(i/r)][int(j/r)]
 	imen=Image.fromarray(im1024)
 	imen=imen.convert("L")
 	strn="2_"+str(imc.shape[0])+"_1024.jpg"

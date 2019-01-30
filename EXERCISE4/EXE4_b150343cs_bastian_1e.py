@@ -8,8 +8,8 @@ from pylab import *
 import math
 
 
-#img=np.array([[1,2,1,0],[2,-1,1,2]],dtype=float64)
-img=cv2.imread('q1.tif',0)
+
+img=cv2.imread('q3.tif',0)
 print("IMAGE")
 print(img)
 
@@ -30,12 +30,7 @@ XC=XC/(img.shape[1])
 
 print(XC)
 
-cov=E-(np.dot(XC,np.transpose(XC)))
-print(cov)
-
-I=np.identity(img.shape[0])
-print(I)"""
-
+cov=E-(np.dot(XC,np.transpose(XC)))"""
 cov=np.cov(img)
 print("COVARIANCE")
 print(cov)
@@ -48,12 +43,26 @@ print(T)
 KLT=np.dot(np.dot(T,img),np.transpose(T))
 print("KL TRANSFORM")
 print(KLT)
-recons=np.dot(np.dot(np.transpose(T),KLT),T)
+recons=np.dot(np.dot(np.transpose(np.conjugate(T)),KLT),np.conjugate(T))
 print("RECONSTRUCTION")
 print(recons)
-cv2.imwrite("1e_basis.jpg",T*255*255)
-cv2.imwrite("1e.jpg",KLT)
-cv2.imwrite("1e_reconstruction.jpg",recons)
+cv2.imwrite("1e_basis.jpg",np.abs(T*255))
+cv2.imwrite("1e.jpg",np.abs(KLT))
+cv2.imwrite("1e_reconstruction.jpg",np.abs(recons))
+
+T=np.triu(T,0)
+print("KL BASIS CR")
+print(T)
+KLT=np.dot(np.dot(T,img),np.transpose(T))
+print("KL TRANSFORM CR")
+print(KLT)
+recons=np.dot(np.dot(np.transpose(np.conjugate(T)),KLT),np.conjugate(T))
+print("RECONSTRUCTION CR")
+print(recons)
+cv2.imwrite("1e_basis_cr.jpg",np.abs(T*255))
+cv2.imwrite("1e_cr.jpg",np.abs(KLT))
+cv2.imwrite("1e_reconstruction_cr.jpg",np.abs(recons))
+
 
 
 

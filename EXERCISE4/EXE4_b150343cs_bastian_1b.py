@@ -6,7 +6,7 @@ import cv2
 
 from pylab import *
 
-img=cv2.imread('q1.jpg',0)
+img=cv2.imread('q1.tif',0)
 print("IMAGE")
 print(img)
 HB=np.zeros(img.shape,dtype=int)
@@ -34,3 +34,22 @@ print(recons)
 cv2.imwrite("1b_basis.jpg",HB*255)
 cv2.imwrite("1b.jpg",hadamard)
 cv2.imwrite("1b_reconstruction.jpg",recons)
+
+HB=np.triu(HB,0)
+
+print("HADAMARD BASIS CR")
+print(HB)
+
+hadamard=np.dot(np.dot(HB,img),np.transpose(HB))
+print("HADAMARD TRANSFORM CR")
+print(hadamard)
+recons=np.dot(np.dot(np.transpose(HB),hadamard),HB)/(n*n)
+print("RECONSTRUCTION CR")
+print(recons)
+
+cv2.imwrite("1b_basis_cr.jpg",HB*255)
+cv2.imwrite("1b_cr.jpg",hadamard)
+cv2.imwrite("1b_reconstruction_cr.jpg",recons)
+
+
+

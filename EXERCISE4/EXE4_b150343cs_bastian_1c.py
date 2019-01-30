@@ -7,7 +7,7 @@ import cv2
 from pylab import *
 import math
 
-img=cv2.imread('q1.jpg',0)
+img=cv2.imread('q1.tif',0)
 print("IMAGE")
 print(img)
 HAB=np.zeros(img.shape,dtype=float64)
@@ -58,8 +58,24 @@ HAT=np.dot(np.dot(HAB,img),np.transpose(HAB))
 print("HAAR TRANSFORM")
 print(HAT)
 recons=np.dot(np.dot(np.transpose(HAB),HAT),HAB)
-print("TRANSFORMATION")
+print("RECONSTRUCTION")
 print(recons)
 cv2.imwrite("1c_basis.jpg",HAB*255)
 cv2.imwrite("1c.jpg",HAT)
 cv2.imwrite("1c_reconstruction.jpg",recons)
+
+HAB=np.triu(HAB,0)
+print("HAAR BASIS CR")	
+print (HAB)
+
+HAT=np.dot(np.dot(HAB,img),np.transpose(HAB))
+print("HAAR TRANSFORM CR")
+print(HAT)
+recons=np.dot(np.dot(np.transpose(HAB),HAT),HAB)
+print("RECONSTRUCTION CR")
+print(recons)
+cv2.imwrite("1c_basis_cr.jpg",HAB*255)
+cv2.imwrite("1c_cr.jpg",HAT)
+cv2.imwrite("1c_reconstruction_cr.jpg",recons)
+
+

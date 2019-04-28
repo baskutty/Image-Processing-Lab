@@ -1,0 +1,45 @@
+Question 1:
+In log function the darker pixels get expanded and the lighter pixels get compressed thus highlghts the darker pixels.As sigma value increase the darker pixel get more expanded.
+
+In exp function its the opposite of the above thus increases the contrast of the given image.As sigma value increases contrast increases.
+
+
+
+Question 3:
+The darker image's histogram is pushed to the left along the pixel intensity axis compared to the original image's histogram.
+
+After equalization the pixel intensity is distributed in the range (0,255)
+
+
+
+Question 5:
+Median filtering replaces a pixel value with the median of pixel value of neighbors.It is a smoothening filter thus blurs the image and is used for removing noise.
+
+Min filter replaces a pixel value with the minimum of pixel value of neighbors.It distorts the image.It makes dark pixel values thicker.
+
+Max filter replaces a pixel value with the maximum of pixel value of neighbors.It blurs the image.It makes dark pixel values thinner.
+
+
+Mean filter replaces a pixel value with the mean of pixel value of neighbors.It is a smoothening filter thus blurs the image blurring effect is high.
+
+
+
+Question 6:
+
+Sobel filter uses first order derivatives it highlights the edges of an image.
+Prewit filter is similar to sobel, uses first order derivatives it highlights the edges of an image.
+Laplace filter is a second order derivative filter it higlights the edges of an image precisely.
+
+
+
+
+Question 7:
+
+In ideal lowpass filter for D0=10 blurring is very high D0=60 blurring is less than before and D0=460 blurring is the least.
+
+In Guassian lowpass filter for D0=10 blurring is very high D0=60 blurring is less than before and D0=460 blurring is the least.
+
+In Butterworth lowpass filter for D0=10 blurring is very high D0=60 blurring is less than before and D0=460 blurring is the least.
+
+This is because as D0 increases more part of image is filtered out thus reduces the blurring.
+

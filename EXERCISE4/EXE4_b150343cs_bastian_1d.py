@@ -5,6 +5,11 @@ import matplotlib.pyplot as plt
 import cv2
 
 from pylab import *
+def removal(a):
+	for i in range (a.shape[0]):
+    		for j in range (a.shape[0]-1,a.shape[0]-i-1,-1):
+        		a[i][j]=0
+	return a
 
 img=cv2.imread('q1.tif',0)
 print("IMAGE")
@@ -32,7 +37,7 @@ cv2.imwrite("1d.jpg",DCT)
 cv2.imwrite("1d_reconstruction.jpg",recons)
 
 
-CB=np.triu(CB,0)
+CB=removal(CB)
 print("COSINE BASIS CR")
 print (CB)
 

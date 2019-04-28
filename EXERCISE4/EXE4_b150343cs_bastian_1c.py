@@ -6,6 +6,11 @@ import cv2
 
 from pylab import *
 import math
+def removal(a):
+	for i in range (a.shape[0]):
+    		for j in range (a.shape[0]-1,a.shape[0]-i-1,-1):
+        		a[i][j]=0
+	return a
 
 img=cv2.imread('q1.tif',0)
 print("IMAGE")
@@ -64,7 +69,7 @@ cv2.imwrite("1c_basis.jpg",HAB*255)
 cv2.imwrite("1c.jpg",HAT)
 cv2.imwrite("1c_reconstruction.jpg",recons)
 
-HAB=np.triu(HAB,0)
+HAB=removal(HAB)
 print("HAAR BASIS CR")	
 print (HAB)
 

@@ -8,7 +8,11 @@ import cv2
 
 from pylab import *
 
-
+def removal(a):
+	for i in range (a.shape[0]):
+    		for j in range (a.shape[0]-1,a.shape[0]-i-1,-1):
+        		a[i][j]=0
+	return a
 
 def make_array(num,bits):
 	
@@ -58,7 +62,7 @@ cv2.imwrite("1a_basis.jpg",WB*255)
 cv2.imwrite("1a.jpg",WT)
 cv2.imwrite("1a_reconstruction.jpg",recons)
 
-WB=np.triu(WB,0)
+WB=removal(WB)
 
 print("WALSH BASIS CR")
 print(WB)

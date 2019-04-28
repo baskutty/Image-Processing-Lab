@@ -5,6 +5,11 @@ import matplotlib.pyplot as plt
 import cv2
 
 from pylab import *
+def removal(a):
+	for i in range (a.shape[0]):
+    		for j in range (a.shape[0]-1,a.shape[0]-i-1,-1):
+        		a[i][j]=0
+	return a
 
 img=cv2.imread('q1.tif',0)
 print("IMAGE")
@@ -35,7 +40,7 @@ cv2.imwrite("1b_basis.jpg",HB*255)
 cv2.imwrite("1b.jpg",hadamard)
 cv2.imwrite("1b_reconstruction.jpg",recons)
 
-HB=np.triu(HB,0)
+HB=removal(HB)
 
 print("HADAMARD BASIS CR")
 print(HB)

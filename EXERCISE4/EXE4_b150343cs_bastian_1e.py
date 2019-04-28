@@ -7,7 +7,11 @@ import cv2
 from pylab import *
 import math
 
-
+def removal(a):
+	for i in range (a.shape[0]):
+    		for j in range (a.shape[0]-1,a.shape[0]-i-1,-1):
+        		a[i][j]=0
+	return a
 
 img=cv2.imread('q3.tif',0)
 print("IMAGE")
@@ -50,7 +54,7 @@ cv2.imwrite("1e_basis.jpg",np.abs(T*255))
 cv2.imwrite("1e.jpg",np.abs(KLT))
 cv2.imwrite("1e_reconstruction.jpg",np.abs(recons))
 
-T=np.triu(T,0)
+T=removal(T)
 print("KL BASIS CR")
 print(T)
 KLT=np.dot(np.dot(T,img),np.transpose(T))
